@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
+         xmlns:NC="http://home.netscape.com/NC-rdf#"
+         xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <!-- FreeCD: -->
+  <RDF:Description RDF:about="rdf:#$SazD03"
+                   em:id="{da5d243e-784a-47f7-9c87-5668daa52a75}"
+                   em:minVersion="0.0.1"
+                   em:maxVersion="1.0.0.*" />
+  <RDF:Description RDF:about="rdf:#$XazD03"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="1.0.0.*"
+                   em:maxVersion="3.0.0.*" />
+  <RDF:Description RDF:about="urn:mozilla:install-manifest"
+                   em:id="{22f5973a-febb-447e-8802-8b9e92207afb}"
+                   em:version="0.0.1pre0"
+                   em:type="2"
+                   em:name="Free Package Manager (FPM)"
+                   em:description="FPM is (or should become) a modern, intelligent, cross-platform package manager designed to be simple and elegant, yet uncompromising on power and flexibility, and completely free software."
+                   em:creator="The FPM Team"
+                   em:homepageURL="http://piratepenguin.is-a-geek.com:82/~declan/fpm"
+                   em:translator="You?"
+                   em:contributor="You?"
+                   em:updateURL="http://piratepenguin.is-a-geek.com/~declan/xpconary/updates.rdf"
+                   em:optionsURL="chrome://fpm/content/options.xul">
+    <em:targetApplication RDF:resource="rdf:#$SazD03"/>
+    <em:targetApplication RDF:resource="rdf:#$XazD03"/>
+    <em:developer>Declan Naughton</em:developer>
+    <em:developer>You?</em:developer>
+  </RDF:Description>
+</RDF:RDF>

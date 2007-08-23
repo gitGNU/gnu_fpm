@@ -1,0 +1,43 @@
+/* (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+   Licensed under the GNU General Public License version 3 or later,
+   available at http://www.gnu.org/licenses/gpl.html
+   You may also have received a copy in a LICENSE file along with
+   this distribution.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details. */
+
+richlistitem {
+  padding: 10px;
+  border-bottom: 1px dotted blue;
+}
+
+/*richlistitem:last-child {
+ border-bottom: none;
+}*/
+
+/* only allow items to be focused if the richlistitem is selected */
+richlistitem > * {
+  -moz-user-focus: none;
+}
+
+richlistitem[selected="true"] > * {
+  -moz-user-focus: normal;
+}
+
+#contextList {
+  font-size: large;
+}
+
+richlistbox > scrollbox {
+  overflow-y: scroll !important;
+}
+
+#selectedContextTitle {
+  padding-left: 10px;
+  border-bottom: 1px solid;
+  border-right: 1px solid;
+  margin-bottom: 5px;
+}

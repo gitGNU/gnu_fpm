@@ -1,0 +1,1 @@
+The client and the server will communicate via an XML-RPL interface, since we require something so much more powerful than a simple organised FTP or HTTP website.

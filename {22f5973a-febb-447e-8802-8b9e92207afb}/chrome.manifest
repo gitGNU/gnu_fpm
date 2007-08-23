@@ -1,0 +1,5 @@
+content fpm chrome/content/
+# browser overlay (Firefox, IceWeasel)
+overlay chrome://browser/content/browser.xul chrome://fpm/content/overlay.xul
+locale fpm en chrome/locale/en/
+skin fpm default chrome/skin/default/

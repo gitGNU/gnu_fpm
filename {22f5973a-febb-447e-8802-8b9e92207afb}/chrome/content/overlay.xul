@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+
+<!--
+  (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+  Licensed under the GNU General Public License version 3 or later,
+  available at http://www.gnu.org/licenses/gpl.html
+  You may also have received a copy in a LICENSE file along with
+  this distribution.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ -->
+
+<overlay id="fpm-overlay"
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+  <script type="application/ecmascript" src="chrome://fpm/content/overlay.js"/>
+  <menupopup id="menu_ToolsPopup">
+    <menuitem id="xpconary-launch" label="Free Package Manager"
+              accesskey="" tooltiptext="Enter Free Package Manager user interface."
+	      insertafter="javascriptConsole" oncommand="fpmUiLaunch ()"/><!-- accesskey="N" oncommand=""/>
+              class="menuitem-iconic icon-xpcomviewer16"/>-->
+  </menupopup>
+</overlay>

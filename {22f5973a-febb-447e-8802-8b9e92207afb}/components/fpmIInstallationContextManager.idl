@@ -1,0 +1,51 @@
+/* (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+   Licensed under the GNU General Public License version 3 or later,
+   available at http://www.gnu.org/licenses/gpl.html
+   You may also have received a copy in a LICENSE file along with
+   this distribution.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details. */
+
+#include "nsISupports.idl"
+#include "nsILocalFile.idl"
+
+#include "fpmIInstallationContext.idl"
+
+interface nsISupports;
+interface nsILocalFile;
+interface fpmIInstallationContext;
+
+[scriptable, uuid(ab4a63c0-3805-499f-a601-e738dd3d47a8)]
+interface fpmIInstallationContextManager : nsISupports
+{
+  attribute fpmIInstallationContext activeContext;
+
+  void addContext (in fpmIInstallationContext newContext);
+  void modifyContext (in fpmIInstallationContext oldContext, in fpmIInstallationContext newContext);
+  void loadContext (in nsILocalFile contextRoot, [retval] out fpmIInstallationContext newContext);
+
+  // following derived from http://mxr.mozilla.org/seamonkey/source/toolkit/components/passwordmgr/public/nsILoginManager.idl
+  /**
+   * Fetch all installation contexts in the manager. An array is always returned;
+   * if there are no contexts the array is empty.
+   *
+   * @param count
+   *        The number of elements in the array. JS callers can simply use
+   *        the array's .length property, and supply an dummy object for
+   *        this out param. For example: |getAllContexts({})|
+   * @param contexts
+   *        An array of fpmIInstallationContext objects. 
+   *
+   * NOTE: This can be called from JS as:
+   *       var contexts = icm.getAllContexts({});
+   *       (|contexts| is an array).
+   */
+  void getAllContexts(out unsigned long count,
+                    [retval, array, size_is(count)] out fpmIInstallationContext contexts);
+
+  /*void query (in xpcIRepositoryQueryListener listener, in string troveName);
+  //void allTroves ();  // nsISimpleEnumerator: http://developer.mozilla.org/en/docs/nsISimpleEnumerator*/
+};

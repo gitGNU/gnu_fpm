@@ -1,0 +1,25 @@
+A package manager is tool to automate the process of installing, upgrading, configuring, and removing software packages from a computer. Current different approaches to this consistently compromomise on user convenience or technical idealism. Package managers are standard on most UNIX-like systems, however on Windows the concept is for some reason very unexplored. We wish to change such, creating a package manager that should work elegantly on plenty of very different platforms. It should also elegantly expose the bar of compromise, providing inexperienced users as well as powerusers with an experience they can be very satisfied with.
+
+Elegance should be an omnipresent power in all ends of this package management system - that's the packager end as well as the user end. Of course, this here is nothing nobody else has ever strived for. We shall describe the concepts we believe may take us in the right direction, many or most of which are inspired by and already tried in the Conary package manager.
+
+
+1. Repository-connected
+This one is a no-brainer. Packages should be associated with a remote repository allowing very convenient updating, which improves security. This concept is very popular in almost all modern package managers.
+
+2. Source-associated binaries
+Binary packages on the repository shall be associated to their source files allowing expert users to intuitively modify how a package is to be built for their own system - what configure flags are to be used, patches applied, etc - all of this done in the same environment as the original packager, with the same power.
+
+3. Shadows
+The shadow concept, pioneered in Conary, was provided as a means of creating parallel development branches. Shadows can keep track of upstream changes from a parent branch, and developers can choose to merge changes from any new revision on the parent at any time. In this way, developers can be responsible for their own changes without maintaining the entire development stream. 
+
+4. Rollback
+It should be possible to "rollback" any mistaken or perhaps unfunctional updates with ease.
+
+5. Changesets
+Changesets, a feature first done by Conary, allows for many of the above concepts, and more. A changeset is a file that describes modifications to be made to a system in order to apply a Conary update. By applying only the changes that are needed, files that have not changed are not needlessly updated, and locally-changed files are merged with updated files instead of overwritten.
+
+6. Software Contexts
+
+
+
+TODO: branch affinity. flavors. version string? See http://wiki.rpath.com/wiki/Conary:Concepts , btw.

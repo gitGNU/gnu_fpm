@@ -1,0 +1,31 @@
+/* (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+   Licensed under the GNU General Public License version 3 or later,
+   available at http://www.gnu.org/licenses/gpl.html
+   You may also have received a copy in a LICENSE file along with
+   this distribution.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details. */
+
+#include "nsISupports.idl"
+
+#include "nsILocalFile.idl"
+
+interface nsILocalFile;
+
+[scriptable, uuid(1b045760-c023-4750-bb10-21f3237a31a3)]
+interface fpmIInstallationContext : nsISupports
+{
+  attribute string name;
+  attribute nsILocalFile root; //TODO: PATH!!!
+  attribute boolean autoResolveDeps;
+  attribute boolean perPackageDirs;
+  attribute boolean autoUpdate;
+  attribute string username;
+  attribute string password;
+
+  //void query (in xpcIRepositoryQueryListener listener, in string troveName);
+  //void allTroves ();  // nsISimpleEnumerator: http://developer.mozilla.org/en/docs/nsISimpleEnumerator
+};

@@ -1,0 +1,18 @@
+/* (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+   Licensed under the GNU General Public License version 3 or later,
+   available at http://www.gnu.org/licenses/gpl.html
+   You may also have received a copy in a LICENSE file along with
+   this distribution.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details. */
+
+html {
+ background: #abc;
+}
+
+fieldset {
+  margin-bottom: 20px;
+}

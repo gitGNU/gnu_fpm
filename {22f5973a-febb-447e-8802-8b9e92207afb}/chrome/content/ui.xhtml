@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<!--
+  (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+  Licensed under the GNU General Public License version 3 or later,
+  available at http://www.gnu.org/licenses/gpl.html
+  You may also have received a copy in a LICENSE file along with
+  this distribution.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ -->
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Free Package Manager</title>
+    <link type="text/css" rel="stylesheet" href="chrome://fpm/skin/ui-global.css"/>
+    <script type="application/ecmascript" src="chrome://fpm/content/ui.js"/>
+  </head>
+  <body onload="init()">
+    <h1>Free Package Manager (FPM)</h1>
+    <a href="javascript:openInstallationContextManager()">Installation Context Manager</a>
+    <!--
+    <fieldset>
+      <legend>Repository Query</legend>
+      <label for="trove">Trove Name: </label>
+      <input type="text" name="trove" id="trove" value="ffmpeg"/> Blank to list all troves, not.<br/>
+      <label for="label">Label / Repository: </label>
+      <input type="text" name="label" id="label" value="piratepenguin.is-a-geek.com@fros:devel" size="50"/><br/>
+      <input type="submit" value="search" onclick="var trove = document.getElementById('trove').value; var label = document.getElementById('label').value; if (trove != '') repoQuery(trove, label); else listTroves(label)"/>
+      <p style="padding: 2px; margin: 2px;">NOTE: You can browse the pirtepenguin.is-a-geek.com@fros:devel label <a href="http://piratepenguin.is-a-geek.com/conary/browse">here</a>.</p>
+    </fieldset>
+    <fieldset>
+      <legend>Local Query (Doesn't actually work, yet)</legend>
+      <label for="trove">Trove Name: </label>
+      <input type="text" name="trove-l" id="trove-l" value="gaim"/> Blank to list all installed troves NOT!<br/>
+      <input type="submit" value="search" onclick="var trove = document.getElementById('trove-l').value; if (trove != '') localQuery(trove); else listLocalTroves()"/>
+    </fieldset>
+    -->
+  </body>
+</html>

@@ -1,0 +1,3 @@
+Of course, it is rediculous to expect that the one binary package will do for Windows and GNU/Linux and OS X - it will not.
+However, this does not crush our cause. We can build binary packages for all of Windows, GNU/Linux and OS X (and more) and each plaform will only know how to fetch it's own packages.
+This is how our package management system shall work across such very different operating systems.

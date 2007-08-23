@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://fpm/skin/installationContextManager.css" type="text/css"?>
+
+<!--
+  (C) 2007 Declan Naughton <piratepenguin@gmail.com>
+  Licensed under the GNU General Public License version 3 or later,
+  available at http://www.gnu.org/licenses/gpl.html
+  You may also have received a copy in a LICENSE file along with
+  this distribution.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ -->
+
+<dialog xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" title="FPM Installation Context Manager" windowtype="FPM:InstallationContextManager" persist="width height screenX screenY sizemode" buttons="accept,cancel,help" ondialogaccept="saveContexts()" ondialogcancel="return true" onload="init()">
+  <script type="application/ecmascript" src="chrome://fpm/content/installationContextManager.js"/>
+  <commandset>
+    <command id="newContext" oncommand="newContext()"/>
+  </commandset>
+  <hbox flex="1">
+    <vbox>
+      <label class="header">Active Installation Context:</label>
+      <radiogroup id="contextListRadioGroup" flex="1">
+        <richlistbox id="contextList" flex="1" onselect="contextListOnSelect()">
+          <!-- hmm does the following have poor user-discoverability when there's tonnes of contexts? -->
+          <richlistitem id="newOrLoad" align="center">
+            <button label="New" oncommand="newContext()"/> <label>or</label> <button label="Load" oncommand="chooseRootDirectoryForLoad()"/>
+          </richlistitem>
+        </richlistbox>
+      </radiogroup>
+    </vbox>
+    <!--<splitter/>-->
+    <vbox flex="1">
+      <label id="selectedContextTitle" class="header">Declan's apps</label>
+      <hbox align="center"><label>Root installation directory:</label><filefield style="-moz-binding: url(chrome://fpm/content/filefield.xml#fileField)" flex="1" id="filefield"/><button label="Browse..." oncommand="chooseRootDirectory()"/></hbox>
+      <checkbox id="autoResolveDeps" oncommand="contextPrefChanged (event)" label="Auto-resolve dependencies?"/>
+      <checkbox id="perPackageDirs" oncommand="contextPrefChanged (event)" label="Create directories per-package?"/>
+      <checkbox id="autoUpdate" oncommand="contextPrefChanged (event)" label="Auto-update?"/>
+      <groupbox>
+        <caption><checkbox id="differentUser" label="Manage as a different user? TODO"/></caption>
+        <grid>
+          <columns>
+            <column/>
+            <column flex="1"/>
+          </columns>
+          <rows>
+            <row align="center">
+              <label disabled="true">Username:</label>
+              <menulist disabled="true">
+                <menupopup>
+                  <menuitem label="root" selected="true"/>
+                  <menuitem label="declan"/>
+                  <menuitem label="guest"/>
+                </menupopup>
+              </menulist>
+            </row>
+            <row align="center">
+              <!-- we should really ask if we want to save the password rather than be asked when it's needed -->
+              <label disabled="true">Password:</label>
+              <textbox disabled="true" type="password" flex="1"/>
+            </row>
+          </rows>
+        </grid>
+      </groupbox>
+    </vbox>
+  </hbox>
+</dialog>
